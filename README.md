@@ -137,9 +137,39 @@ useEffect(() => {
 />
 ```
 
-
 ## HTML
 
 ### \<progress> 태그
 
 어느 작업의 완료 정도를 나타내며, 주로 진행 표시줄의 형태를 띈다.
+
+## JS
+
+### ?? (null 병합 연산자)
+
+왼쪽 피연산자가 `null` 또는 `undefined`일 때 오른쪽 피연산자를 반환하고, 그렇지 않으면 왼쪽 피연산자를 반환하는 논리 연산자이다.
+
+```js
+let height;
+
+height = null;
+console.log(height ?? 100);
+// 100
+
+height = 160;
+console.log(height ?? 100);
+// 160
+```
+
+응용하면
+
+```js
+let firstName = null;
+let lastName = null;
+let nickName = "바이올렛";
+
+alert(firstName ?? lastName ?? nickName ?? "익명의 사용자"); 
+// 바이올렛
+```
+ 오른쪽 -> 오른쪽 -> 닉네임 있으니까 stop  
+ ("익명의 사용자" 까지는 가지 않음.)

@@ -41,22 +41,20 @@ function Question({ onSkipAnswer, index, onSelectAnswer }) {
   }
 
   return (
-    <div>
-      <div id="question">
-        <Timer
-          key={timer}
-          timeout={timer}
-          onTimeout={answer.selectedAnswer === "" ? onSkipAnswer : null}
-          mode={answerState}
-        />
-        <h2>{QUESTIONS[index].text}</h2>
-        <Answers
-          answers={QUESTIONS[index].answers}
-          selectedAnswer={answer.selectedAnswer}
-          answerState={answerState}
-          onSelect={handleSelectAnswer}
-        />
-      </div>
+    <div id="question">
+      <Timer
+        key={timer}
+        timeout={timer}
+        onTimeout={answer.selectedAnswer === "" ? onSkipAnswer : null}
+        mode={answerState}
+      />
+      <h2>{QUESTIONS[index].text}</h2>
+      <Answers
+        answers={QUESTIONS[index].answers}
+        selectedAnswer={answer.selectedAnswer}
+        answerState={answerState}
+        onSelect={handleSelectAnswer}
+      />
     </div>
   );
 }
